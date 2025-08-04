@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Fun & Interactive — Greet · Quiz · Joke</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Center heading -->
+  <h1 id="main-heading">🎁 Enter the Fun Zone!</h1>
+
+  <div id="container">
+    <div class="card" id="greet-card">
+      <h2 id="greet-title">Hello there!</h2>
+      <input id="name-input" type="text" placeholder="Your name?" />
+      <button id="greet-btn">Greet Me 😊</button>
+    </div>
+
+    <div class="card" id="quiz-card">
+      <h2>Pop Quiz 🧠</h2>
+      <div id="quiz-content">
+        <p id="quiz-question">What is 5 + 7?</p>
+        <div class="choices">
+          <label><input type="radio" name="quiz" value="10" /> 10</label>
+          <label><input type="radio" name="quiz" value="11" /> 11</label>
+          <label><input type="radio" name="quiz" value="12" /> 12</label>
+          <label><input type="radio" name="quiz" value="13" /> 13</label>
+        </div>
+        <button id="quiz-btn">Submit Answer</button>
+        <div id="quiz-feedback"></div>
+      </div>
+    </div>
+
+    <div class="card" id="joke-card">
+      <h2>Random Joke 😂</h2>
+      <p id="joke-text">
+        Why did the developer go broke? Because he used all his cache.
+      </p>
+      <button id="joke-btn">Another One!</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

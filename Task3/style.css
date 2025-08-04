@@ -1,0 +1,122 @@
+/* Rainbow-animated full-page background */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(
+    -45deg,
+    red 0%, orange 15%, yellow 30%, green 45%,
+    blue 60%, indigo 75%, violet 90%
+  ) 0 -100% / 100% 300%;
+  animation: rainbow 6s linear infinite;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes rainbow {
+  to { background-position: 0 100%; }
+}
+
+/* Animated gradient text heading */
+#main-heading {
+  font-size: 3rem;
+  margin: 1.5rem 0;
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  animation: slideRainbow 8s ease-in-out infinite;
+}
+
+@keyframes slideRainbow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Container and cards layout */
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.card {
+  width: 350px;
+  height: 390px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  padding: 1.6rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; /* Ensures all quiz content stays inside */
+  transition: transform 0.2s ease;
+  flex: 0 0 auto;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card input[type="text"] {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  margin-top: 0.1rem;
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1em;
+  font-weight: bold;
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #341f97;
+}
+
+.choices {
+  margin: 1rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.choices label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+#quiz-feedback {
+  margin-top: 0.8rem;
+  font-weight: bold;
+  min-height: 1.2em;
+  color: green;
+  text-align: center;
+}
+
+/* Avoid flex overflow issues on some radio buttons */
+.card * {
+  min-width: 0;
+}
